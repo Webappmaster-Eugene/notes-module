@@ -1,0 +1,4 @@
+node_modules/
+prisma/schema.sql
+*.md
+package-lock.json

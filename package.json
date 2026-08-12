@@ -1,0 +1,36 @@
+{
+  "name": "notes-module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend-модуль заметок: проектирование API, схема Prisma и реализация обновления заметки",
+  "scripts": {
+    "prisma:generate": "prisma generate",
+    "prisma:validate": "prisma validate",
+    "typecheck": "tsc --noEmit",
+    "prisma:sql": "prisma migrate diff --from-empty --to-schema-datamodel prisma/schema.prisma --script > prisma/schema.sql",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:mutation": "node scripts/mutation-check.mjs",
+    "check": "npm run format:check && npm run prisma:validate && npm run typecheck && npm run test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@nestjs/common": "11.1.29",
+    "@prisma/client": "6.19.3",
+    "class-transformer": "0.5.1",
+    "class-validator": "0.15.1",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.1",
+    "prettier": "^3.9.6",
+    "prisma": "6.19.3",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}
